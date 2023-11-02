@@ -1,0 +1,33 @@
+{
+  "name": "purescript-dev-reload",
+  "version": "0.1.0",
+  "description": "Dev module for reloading PureScript applications",
+  "scripts": {
+    "build": "node_modules/.bin/spago build --purs-args=\"--strict --stash --censor-lib\"",
+    "build:dev": "node_modules/.bin/spago build --purs-args=\"--stash --censor-lib\" -w",
+    "esbuild": "esbuild --bundle index.js",
+    "purs-tidy": "node_modules/.bin/purs-tidy format-in-place src/**/*.purs",
+    "serve": "npm run esbuild -- --bundle --servedir=dist --outdir=dist/js",
+    "test": "spago test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/joe-op/purescript-dev-reload.git"
+  },
+  "author": "Joe Opseth",
+  "license": "MIT-0",
+  "bugs": {
+    "url": "https://github.com/joe-op/purescript-dev-reload/issues"
+  },
+  "homepage": "https://github.com/joe-op/purescript-dev-reload#readme",
+  "devDependencies": {
+    "delete": "^1.1.0",
+    "esbuild": "^0.19.5",
+    "gulp": "^4.0.2",
+    "gulp-less": "^5.0.0",
+    "purescript": "^0.15.12",
+    "purescript-psa": "^0.8.2",
+    "purs-tidy": "^0.10.0",
+    "spago": "^0.21.0"
+  }
+}
